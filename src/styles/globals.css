@@ -41,3 +41,40 @@ body {
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
 }
+@media (max-width: 768px) {
+  /* Fix container overflow */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Stack all two-column grids on mobile */
+  [style*="grid-template-columns: 1fr 2fr"],
+  [style*="grid-template-columns: 1fr 1.5fr"],
+  [style*="grid-template-columns: repeat(2, 1fr)"],
+  [style*="grid-template-columns: repeat(3, 1fr)"],
+  [style*="grid-template-columns: 1fr 2fr"],
+  [style*="grid-template-columns: 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  /* Reduce hero text size */
+  h1 {
+    font-size: 2.5rem !important;
+  }
+
+  /* Fix contact page two-column layout */
+  [style*="grid-template-columns: 1fr 1.5fr"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* existing rules... */
+
+  /* Reduce subtext size on mobile */
+  p.text-lg {
+    font-size: 0.9rem !important;
+    line-height: 1.7 !important;
+  }
+}

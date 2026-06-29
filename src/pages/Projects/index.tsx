@@ -34,6 +34,7 @@ export default function Projects() {
                   transition: 'background-color 0.2s ease',
                 }}
                 onMouseEnter={e => (e.currentTarget.style.backgroundColor = 'var(--color-bg-elevated)')}
+                onClick={() => { if (project.caseStudy) window.location.href = `#${project.caseStudy}` }}
                 onMouseLeave={e => (e.currentTarget.style.backgroundColor = 'transparent')}
               >
                 <span style={{ color: 'var(--color-text-muted)', fontFamily: 'var(--font-body)', fontSize: '0.75rem', minWidth: '2rem', paddingTop: '4px' }}>
@@ -102,7 +103,16 @@ export default function Projects() {
                   </div>
                 </div>
 
-                <span style={{ color: 'var(--color-gold)', fontSize: '1.2rem', paddingTop: '4px' }}>→</span>
+                {project.caseStudy ? (
+                  <a
+                    href={`#${project.caseStudy}`}
+                    style={{ color: 'var(--color-gold)', fontSize: '1.2rem', paddingTop: '4px', textDecoration: 'none' }}
+                  >
+                    →
+                  </a>
+                ) : (
+                  <span style={{ color: 'var(--color-text-muted)', fontSize: '1.2rem', paddingTop: '4px' }}>→</span>
+                )}
               </div>
             ))}
           </div>

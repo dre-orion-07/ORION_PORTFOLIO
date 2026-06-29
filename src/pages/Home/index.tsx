@@ -33,7 +33,7 @@ export default function Home() {
               style={{ color: 'var(--color-gold)', fontFamily: 'var(--font-body)', letterSpacing: '0.2em' }}
               className="text-xs uppercase mb-6"
             >
-              Ogunyeye Damilare — Full Stack Developer
+              Damilare Ogunyeye — Full Stack & AI Engineer
             </motion.p>
 
             <motion.h1
@@ -52,11 +52,10 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', maxWidth: '520px', lineHeight: 1.8 }}
+              style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', maxWidth: '520px', lineHeight: 1.8,  marginBottom: '3rem' }}
               className="text-lg mb-10"
             >
-             I design systems, build full-stack applications, and ship
-products that solve real problems. Clean code. Deliberate decisions.
+             I design and build scalable web applications, AI systems, and enterprise software using React, Node.js, PostgreSQL, and LLMs — focused on solving real operational problems.
             </motion.p>
 
             <motion.div
@@ -264,6 +263,7 @@ products that solve real problems. Clean code. Deliberate decisions.
             transition: 'background-color 0.2s ease',
           }}
           onMouseEnter={e => (e.currentTarget.style.backgroundColor = 'var(--color-bg-elevated)')}
+          onClick={() => { if (project.caseStudy) window.location.href = `#${project.caseStudy}` }}
           onMouseLeave={e => (e.currentTarget.style.backgroundColor = 'var(--color-bg-secondary)')}
         >
           <span style={{ color: 'var(--color-text-muted)', fontFamily: 'var(--font-body)', fontSize: '0.75rem', minWidth: '2rem', paddingTop: '4px' }}>

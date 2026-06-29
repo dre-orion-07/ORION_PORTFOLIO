@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import Layout from './components/layout/layout'
 import Home from './pages/Home'
 import About from './pages/About'
@@ -8,6 +8,7 @@ import Resume from './pages/Resume'
 import Blog from './pages/Blog'
 import Contact from './pages/Contact'
 import NotFound from './pages/NotFound'
+import BakeFlow from './pages/Projects/BakeFlow'
 
 function AppRoutes() {
   return (
@@ -16,6 +17,7 @@ function AppRoutes() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/projects/bakeflow" element={<BakeFlow />} />
         <Route path="/skills" element={<Skills />} />
         <Route path="/resume" element={<Resume />} />
         <Route path="/blog" element={<Blog />} />
@@ -28,8 +30,8 @@ function AppRoutes() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <AppRoutes />
-    </BrowserRouter>
+    </HashRouter>
   )
 }

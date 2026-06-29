@@ -51,7 +51,7 @@ export default function About() {
       </div>
 
       <p style={{ color: 'var(--color-text-secondary)', fontFamily: 'var(--font-body)', fontSize: '0.95rem', lineHeight: 1.9 }}>
-        Every project I take on is driven by one standard: build something clean, functional, and worth using. I bring the same rigorous attention to a React component or a database schema that I once brought to a structural drawing. The medium is different. The discipline is the same.
+        Every project I take on is driven by one standard: build something clean, functional, and worth using. I enjoy building software that removes friction from everyday businesses. Whether it's automating bakery operations with BakeFlow ERP or helping readers discover books using AI, I'm motivated by solving practical problems with thoughtful engineering. I choose PostgreSQL because I want structured, relational data with guarantees. I choose React because the component model maps naturally to how I think about systems. I choose TypeScript because ambiguity in code costs time. Those aren't random choices — they're the result of thinking carefully about what each problem actually needs.
       </p>
 
     </div>

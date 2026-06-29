@@ -43,7 +43,7 @@ export default function Navbar() {
           style={{ fontFamily: 'var(--font-display)', color: 'var(--color-gold)', minWidth: '80px' }}
           className="text-xl font-semibold tracking-widest uppercase"
         >
-          Dre
+          ORION
         </Link>
 
         <ul className="hidden md:flex items-center gap-9 flex-1 justify-end">

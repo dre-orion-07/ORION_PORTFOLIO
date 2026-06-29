@@ -9,6 +9,7 @@ export interface Project {
   github?: string
   live?: string
   featured: boolean
+  caseStudy?: string
 }
 
 export const projects: Project[] = [
@@ -22,6 +23,7 @@ export const projects: Project[] = [
     status: 'Live',
     live:'https://dre-orion-07.github.io/Production-and-Business-Managment-system/',
     featured: true,
+    caseStudy: '/projects/bakeflow',
   },
   {
     id: 'cinevault',
