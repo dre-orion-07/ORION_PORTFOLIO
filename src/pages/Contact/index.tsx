@@ -4,14 +4,39 @@ import Container from '../../components/layout/container'
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
   const [sent, setSent] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [error, setError] = useState('')
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
-    setSent(true)
+    setIsSubmitting(true)
+    setError('')
+
+    try {
+      const response = await fetch('https://formspree.io/f/xeebpvlb', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify(form),
+      })
+
+      if (response.ok) {
+        setSent(true)
+        setForm({ name: '', email: '', message: '' })
+      } else {
+        setError('Something went wrong. Please try again or email me directly.')
+      }
+    } catch {
+      setError('Network error. Please try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const inputStyle = {
@@ -134,8 +159,15 @@ export default function Contact() {
                     />
                   </div>
 
+                  {error && (
+                    <p style={{ color: '#ff4444', fontFamily: 'var(--font-body)', fontSize: '0.85rem' }}>
+                      {error}
+                    </p>
+                  )}
+
                   <button
                     type="submit"
+                    disabled={isSubmitting}
                     style={{
                       backgroundColor: 'var(--color-gold)',
                       color: '#0A0A0A',
@@ -144,15 +176,16 @@ export default function Contact() {
                       fontSize: '0.75rem',
                       padding: '0.875rem 2.5rem',
                       border: 'none',
-                      cursor: 'pointer',
+                      cursor: isSubmitting ? 'not-allowed' : 'pointer',
                       fontWeight: 500,
                       alignSelf: 'flex-start',
                       transition: 'opacity 0.2s ease',
+                      opacity: isSubmitting ? 0.7 : 1,
                     }}
-                    onMouseEnter={e => (e.currentTarget.style.opacity = '0.85')}
-                    onMouseLeave={e => (e.currentTarget.style.opacity = '1')}
+                    onMouseEnter={e => { if (!isSubmitting) e.currentTarget.style.opacity = '0.85' }}
+                    onMouseLeave={e => { if (!isSubmitting) e.currentTarget.style.opacity = '1' }}
                   >
-                    SEND MESSAGE
+                    {isSubmitting ? 'SENDING...' : 'SEND MESSAGE'}
                   </button>
                 </form>
               )}

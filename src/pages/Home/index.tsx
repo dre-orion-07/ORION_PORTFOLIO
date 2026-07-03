@@ -65,7 +65,7 @@ export default function Home() {
               className="flex flex-wrap gap-4"
             >
               <a
-                href="/projects"
+                href="/#/projects"
                 style={{
                   backgroundColor: 'var(--color-gold)',
                   color: '#0A0A0A',
@@ -85,7 +85,7 @@ export default function Home() {
               </a>
 
               <a
-                href="/about"
+                href="/#/about"
                 style={{
                   border: '1px solid rgba(212,175,55,0.4)',
                   color: 'var(--color-text-secondary)',
@@ -225,7 +225,7 @@ export default function Home() {
 
     <div style={{ marginTop: '2.5rem', textAlign: 'right' }}>
       <a
-        href="/skills"
+        href="/#/skills"
         style={{ color: 'var(--color-gold)', fontFamily: 'var(--font-body)', fontSize: '0.8rem', letterSpacing: '0.15em', borderBottom: '1px solid var(--color-gold)', paddingBottom: '2px' }}
         className="uppercase"
       >
@@ -263,7 +263,9 @@ export default function Home() {
             transition: 'background-color 0.2s ease',
           }}
           onMouseEnter={e => (e.currentTarget.style.backgroundColor = 'var(--color-bg-elevated)')}
-          onClick={() => { if (project.caseStudy) window.location.href = `#${project.caseStudy}` }}
+          onClick={() => {
+            if (project.caseStudy) window.location.href = `/#${project.caseStudy}`
+          }}
           onMouseLeave={e => (e.currentTarget.style.backgroundColor = 'var(--color-bg-secondary)')}
         >
           <span style={{ color: 'var(--color-text-muted)', fontFamily: 'var(--font-body)', fontSize: '0.75rem', minWidth: '2rem', paddingTop: '4px' }}>
@@ -310,7 +312,7 @@ export default function Home() {
 
     <div style={{ marginTop: '2.5rem', textAlign: 'right' }}>
       <a
-        href="/projects"
+        href="/#/projects"
         style={{ color: 'var(--color-gold)', fontFamily: 'var(--font-body)', fontSize: '0.8rem', letterSpacing: '0.15em', borderBottom: '1px solid var(--color-gold)', paddingBottom: '2px' }}
         className="uppercase"
       >
@@ -351,7 +353,7 @@ export default function Home() {
       </p>
       <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
         
-          <a href="/contact"
+          <a href="/#/contact"
           style={{
             backgroundColor: 'var(--color-gold)',
             color: '#0A0A0A',
@@ -370,7 +372,7 @@ export default function Home() {
           GET IN TOUCH
         </a>
         
-          <a href="/resume"
+          <a href="/#/resume"
           style={{
             border: '1px solid rgba(212,175,55,0.4)',
             color: 'var(--color-text-secondary)',
