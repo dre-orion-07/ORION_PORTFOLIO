@@ -9,6 +9,7 @@ import Blog from './pages/Blog'
 import Contact from './pages/Contact'
 import NotFound from './pages/NotFound'
 import BakeFlow from './pages/Projects/BakeFlow'
+import CineMax from './pages/Projects/CineMax'
 
 function AppRoutes() {
   return (
@@ -23,6 +24,7 @@ function AppRoutes() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/projects/cinemax" element={<CineMax />} />
       </Routes>
     </Layout>
   )
